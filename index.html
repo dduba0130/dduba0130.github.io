@@ -100,7 +100,7 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* 브리저튼 왁스 인장 오버레이 */
+    /* 왁스 인장 오버레이 */
     .music-gate {
       position: fixed;
       top: 0;
@@ -346,32 +346,35 @@
 </head>
 <body>
 
-  <!-- 내 저장소 직접 탑재 (100% 재생 보장 상대경로) -->
+  <!-- Clair de Lune (Studio Version) 멀티 소스 연결 -->
   <audio id="bgmAudio" loop preload="auto" playsinline>
+    <!-- 1순위: 저장소에 직접 올린 bgm.mp3 파일 -->
     <source src="./bgm.mp3" type="audio/mpeg">
-    <!-- 백업용 온라인 클래식 CDN -->
-    <source src="https://assets.mixkit.co/music/preview/mixkit-classical-strings-592.mp3" type="audio/mpeg">
+    <!-- 2순위: Archive.org 공식 고음질 Clair de Lune Studio Piano 음원 -->
+    <source src="https://archive.org/download/ClaudeDebussyClairDeLuneFromTwilight/01ClaudeDebussy-ClairDeLune.mp3" type="audio/mpeg">
+    <!-- 3순위: Wikimedia Commons 무손실 트랜스코딩 백업 음원 -->
+    <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/ff/Clair_de_lune_%28Claude_Debussy%29_Suite_bergamasque.ogg/Clair_de_lune_%28Claude_Debussy%29_Suite_bergamasque.ogg.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- 왁스 인장 오프닝 게이트 (터치 즉시 오디오 락 해제) -->
+  <!-- 왁스 인장 오프닝 게이트 (터치 즉시 Clair de Lune 재생) -->
   <div class="music-gate" id="musicGate" onclick="enterSalon()">
     <div class="seal-card">
       <div class="wax-seal">B</div>
       <div class="cinzel" style="font-size: 12px; color: #8c5b36; margin-bottom: 6px; font-weight: 700;">BRIDGERTON SALON</div>
       <h2 class="playfair" style="font-size: 21px; font-weight: 800; color: #1a2332; margin-bottom: 8px;">Dearest Family,</h2>
       <p style="font-size: 14px; color: #5c5249; line-height: 1.65; word-break: keep-all;">
-        가족 다섯 사람과 깨복이를 위한<br>우아한 클래식 현악 선율과 함께 입장합니다.
+        가족 다섯 사람과 깨복이를 위한<br>드뷔시의 <strong>'Clair de Lune (달빛)'</strong>과 함께 입장합니다.
       </p>
       <div class="gate-btn">
-        초대장 열기 & 음악 시작 ♫
+        초대장 열기 & 달빛 감상 ♫
       </div>
     </div>
   </div>
 
   <!-- 우측 상단 플로팅 BGM 버튼 -->
   <div class="bgm-btn" id="bgmBtn" onclick="toggleBgm(event)">
-    <span class="bgm-icon">🎻</span>
-    <span id="bgmText">현악 앙상블 ♫</span>
+    <span class="bgm-icon">🎹</span>
+    <span id="bgmText">Clair de Lune ♫</span>
   </div>
 
   <div class="mobile-container">
@@ -810,15 +813,17 @@
     const gate = document.getElementById('musicGate');
     let isPlaying = false;
 
+    // 모바일 기본 최대 볼륨 세팅
     audio.volume = 1.0;
 
     function enterSalon() {
+      // 왁스 인장 터치 이벤트 컨텍스트에서 즉시 play 트리거 (모바일 자동재생 정책 통과)
       audio.play().then(() => {
         isPlaying = true;
         btn.classList.add('playing');
         text.innerText = '음악 멈춤 ⏸';
       }).catch((err) => {
-        console.error("Audio playback error:", err);
+        console.error("Clair de Lune playback error:", err);
       });
 
       gate.style.opacity = '0';
@@ -832,7 +837,7 @@
       if (isPlaying) {
         audio.pause();
         btn.classList.remove('playing');
-        text.innerText = '현악 앙상블 ♫';
+        text.innerText = 'Clair de Lune ♫';
         isPlaying = false;
       } else {
         audio.play().then(() => {
