@@ -5,40 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>가을 오후의 가족 음악 살롱 ♫</title>
   
- <!-- 카카오톡/SNS 공유 썸네일 & 미리보기 (Open Graph) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="가을 햇살 아래, 우리 가족 음악 살롱 ☕️">
   <meta property="og:description" content="2026.09.25 금요일 | 리스닝룸 백지화 | 깨복이와 함께하는 오후 쉼표">
-  <!-- 따뜻한 우드 톤의 턴테이블 & LP 레코드 사진으로 교체 -->
- <meta property="og:image" content="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
-    @font-face {
-      font-family: 'KyoboHandwriting2020pdy';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020pdy.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-    @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic Low.woff');
-  @import url('https://fonts.googleapis.com/css2?family=MaruBuri:wght@400;600;700&display=swap');
-  @font-face {
-    font-family: 'Ownglyph_DailyPlan-Rg';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_DailyPlan-Rg.woff2') format('woff2');
-  }
-
-  /* 부드럽고 우아한 감성 서명 폰트 */
-  .sign-font {
-    font-family: 'Ownglyph_DailyPlan-Rg', 'MaruBuri', cursive, serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #636b5a;
-    letter-spacing: -0.3px;
-    word-break: keep-all;
-  }
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Gowun+Batang:wght@400;700&display=swap');
 
     * {
       box-sizing: border-box;
@@ -48,9 +24,11 @@
     }
 
     body {
-      background-color: #dcd8d0;
+      background-color: #17202a;
+      background-image: radial-gradient(#253243 1.5px, transparent 1.5px), radial-gradient(#253243 1.5px, #17202a 1.5px);
+      background-size: 30px 30px;
       font-family: 'Gowun Batang', 'Pretendard', serif;
-      color: #3b3531;
+      color: #2b2520;
       display: flex;
       justify-content: center;
       min-height: 100vh;
@@ -60,144 +38,199 @@
     .mobile-container {
       width: 100%;
       max-width: 450px;
-      background: #fdfbf7;
-      padding: 50px 24px 76px 24px;
-      box-shadow: 0 10px 35px rgba(50, 40, 30, 0.1);
+      background: #fbf9f4;
+      padding: 48px 22px 76px 22px;
+      box-shadow: 0 16px 45px rgba(0,0,0,0.45);
       position: relative;
+      border-left: 2px solid #d4af37;
+      border-right: 2px solid #d4af37;
     }
 
-    .handwrite {
-      font-family: 'KyoboHandwriting2020pdy', cursive;
-    }
-
-    /* 상단 헤더 */
-    .header {
+    .manor-frame {
+      border: 1px solid #c5a059;
+      padding: 24px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.65);
+      box-shadow: inset 0 0 18px rgba(197, 160, 89, 0.12);
       text-align: center;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
-    .tag-top {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #6a7062;
-      background: #eef0eb;
-      padding: 6px 16px;
+    .cinzel {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1.5px;
+    }
+
+    .playfair {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* 플로팅 BGM 버튼 */
+    .bgm-btn {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 999;
+      background: #fdfbf7;
+      border: 1.5px solid #c5a059;
       border-radius: 30px;
-      margin-bottom: 24px;
+      padding: 7px 14px 7px 10px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      cursor: pointer;
       font-family: 'Pretendard', sans-serif;
-    }
-
-    /* 회전하는 바이닐 LP */
-    .turntable-box {
-      width: 136px;
-      height: 136px;
-      background: #f3efe8;
-      border-radius: 28px;
-      margin: 0 auto 24px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 18px rgba(90, 80, 70, 0.07);
-    }
-
-    .vinyl {
-      width: 114px;
-      height: 114px;
-      border-radius: 50%;
-      background: repeating-radial-gradient(#2b2826, #2b2826 4px, #3a3633 5px, #2b2826 6px);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: spin 16s linear infinite;
-    }
-
-    .vinyl-label {
-      width: 44px;
-      height: 44px;
-      background: #f7ecd7;
-      border-radius: 50%;
-      border: 4px solid #2b2826;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #695643;
+      font-size: 12px;
       font-weight: 700;
+      color: #8c5b36;
+      transition: all 0.2s ease;
+    }
+
+    .bgm-icon {
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .playing .bgm-icon {
+      animation: spin 3s linear infinite;
     }
 
     @keyframes spin {
       100% { transform: rotate(360deg); }
     }
 
-    .main-title {
+    /* 브리저튼 왁스 인장 오버레이 */
+    .music-gate {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(18, 24, 33, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: opacity 0.4s ease;
+    }
+
+    .seal-card {
+      background: #fbf9f4;
+      border: 2px solid #c5a059;
+      border-radius: 28px;
+      padding: 34px 24px;
+      width: 84%;
+      max-width: 320px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+
+    .wax-seal {
+      width: 66px;
+      height: 66px;
+      background: radial-gradient(circle, #a82e2e, #731313);
+      border-radius: 50%;
+      margin: 0 auto 16px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(115, 19, 19, 0.45);
+      border: 3px dashed #c45757;
+      color: #f7e6c4;
+      font-family: 'Cinzel', serif;
       font-size: 26px;
+      font-weight: 800;
+    }
+
+    .gate-btn {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #c5a059, #8c5b36);
+      color: #ffffff;
+      padding: 13px 28px;
+      border-radius: 30px;
       font-weight: 700;
-      color: #27221f;
+      font-size: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(140, 91, 54, 0.4);
+      animation: pulse 1.8s infinite;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+
+    .main-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: #1f2a37;
       line-height: 1.4;
       margin-bottom: 12px;
       letter-spacing: -0.5px;
     }
 
     .main-sub {
-      font-size: 16px;
-      color: #685e57;
-      margin-bottom: 24px;
+      font-size: 15.5px;
+      color: #5d534b;
       line-height: 1.7;
+      margin-bottom: 16px;
     }
 
-    /* 가족 태그 */
     .family-tags {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 6px;
       flex-wrap: wrap;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
 
     .f-pill {
-      font-size: 13.5px;
-      background: #f2eee7;
+      font-size: 13px;
+      background: #f1ebd9;
+      border: 1px solid #dcd1ba;
       color: #4f453f;
-      padding: 5px 12px;
-      border-radius: 20px;
+      padding: 5px 11px;
+      border-radius: 16px;
       font-family: 'Pretendard', sans-serif;
       font-weight: 600;
     }
 
     .f-pill.baby {
-      background: #fcf0e4;
-      color: #9d501b;
+      background: #fcf1e3;
+      border: 1.5px solid #c5a059;
+      color: #8c5b36;
       font-weight: 700;
-      border: 1px solid #ebd3bf;
     }
 
-    /* 감성 티켓 인포박스 */
     .ticket-card {
-      background: #f9f6f0;
-      border-radius: 20px;
-      padding: 22px 20px;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 20px 18px;
       text-align: left;
-      font-size: 15px;
+      font-size: 14.5px;
       line-height: 1.8;
       color: #4b413b;
-      position: relative;
-      border: 1px solid #ede5d8;
+      border: 1px solid #e7ddcf;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
     .ticket-row {
       display: flex;
       align-items: baseline;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .ticket-label {
-      width: 78px;
-      color: #7b7168;
-      font-size: 14px;
+      width: 68px;
+      color: #8c7f73;
+      font-size: 13.5px;
       flex-shrink: 0;
     }
 
@@ -211,31 +244,30 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin: 36px 0;
-      color: #8c8276;
-      font-size: 13px;
-      font-family: 'Pretendard', sans-serif;
-      font-weight: 600;
-      letter-spacing: 1px;
+      margin: 34px 0;
+      color: #8c5b36;
+      font-size: 14px;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      letter-spacing: 2px;
     }
 
     .deco-line::before, .deco-line::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: #e4dcce;
+      background: linear-gradient(to right, transparent, #c5a059, transparent);
     }
 
-    /* 챕터 & 트랙 리스트 */
     .chapter {
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .chapter-title {
       font-family: 'Pretendard', sans-serif;
       font-size: 15.5px;
       font-weight: 700;
-      color: #53624e;
+      color: #3b5066;
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -245,18 +277,18 @@
 
     .song-box {
       background: #ffffff;
-      border-radius: 18px;
-      padding: 16px 18px;
-      margin-bottom: 11px;
-      box-shadow: 0 2px 10px rgba(70, 60, 50, 0.03);
-      border: 1px solid #f0ebe2;
+      border-radius: 16px;
+      padding: 15px 17px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(70, 60, 50, 0.03);
+      border: 1px solid #eee7dc;
     }
 
     .song-header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 7px;
+      gap: 9px;
+      margin-bottom: 6px;
     }
 
     .song-num {
@@ -267,21 +299,21 @@
     }
 
     .role-tag {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
-      padding: 3px 8px;
+      padding: 2.5px 7.5px;
       border-radius: 6px;
       font-family: 'Pretendard', sans-serif;
     }
 
-    .tag-막내 { background: #e9ecf2; color: #3b4b6d; }
+    .tag-막내 { background: #e8ecf4; color: #2d436a; }
     .tag-아빠 { background: #faede9; color: #9c432d; }
     .tag-엄마 { background: #fbebf1; color: #943d63; }
-    .tag-공주 { background: #e8f2ef; color: #2e6659; }
-    .tag-형부 { background: #eaf1f7; color: #2e597c; }
+    .tag-공주 { background: #e8f3ef; color: #236555; }
+    .tag-형부 { background: #eaf1f7; color: #245880; }
 
     .song-name {
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 700;
       color: #292421;
       flex: 1;
@@ -291,45 +323,64 @@
     }
 
     .song-desc {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #635850;
       line-height: 1.65;
-      padding-left: 28px;
+      padding-left: 27px;
     }
 
-    /* 클로징 */
     .closing-wrap {
       text-align: center;
-      padding: 24px 10px 0 10px;
+      padding: 20px 10px 10px 10px;
     }
 
     .cl-quote {
+      font-family: 'Gowun Batang', serif;
       font-size: 15.5px;
       color: #3b322d;
-      line-height: 1.95;
-      margin-bottom: 22px;
-    }
-
-    .cl-from {
-      font-size: 16px;
-      color: #5c6254;
-      font-weight: 700;
+      line-height: 2.0;
+      margin-bottom: 24px;
+      word-break: keep-all;
     }
   </style>
 </head>
 <body>
 
+  <!-- 내 저장소 직접 탑재 (100% 재생 보장 상대경로) -->
+  <audio id="bgmAudio" loop preload="auto" playsinline>
+    <source src="./bgm.mp3" type="audio/mpeg">
+    <!-- 백업용 온라인 클래식 CDN -->
+    <source src="https://assets.mixkit.co/music/preview/mixkit-classical-strings-592.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 왁스 인장 오프닝 게이트 (터치 즉시 오디오 락 해제) -->
+  <div class="music-gate" id="musicGate" onclick="enterSalon()">
+    <div class="seal-card">
+      <div class="wax-seal">B</div>
+      <div class="cinzel" style="font-size: 12px; color: #8c5b36; margin-bottom: 6px; font-weight: 700;">BRIDGERTON SALON</div>
+      <h2 class="playfair" style="font-size: 21px; font-weight: 800; color: #1a2332; margin-bottom: 8px;">Dearest Family,</h2>
+      <p style="font-size: 14px; color: #5c5249; line-height: 1.65; word-break: keep-all;">
+        가족 다섯 사람과 깨복이를 위한<br>우아한 클래식 현악 선율과 함께 입장합니다.
+      </p>
+      <div class="gate-btn">
+        초대장 열기 & 음악 시작 ♫
+      </div>
+    </div>
+  </div>
+
+  <!-- 우측 상단 플로팅 BGM 버튼 -->
+  <div class="bgm-btn" id="bgmBtn" onclick="toggleBgm(event)">
+    <span class="bgm-icon">🎻</span>
+    <span id="bgmText">현악 앙상블 ♫</span>
+  </div>
+
   <div class="mobile-container">
     
     <!-- HEADER -->
-    <div class="header">
-      <div class="tag-top">CHUSEOK MUSIC SALON</div>
+    <div class="manor-frame">
+      <div class="cinzel" style="font-size: 12px; font-weight: 700; color: #8c5b36; margin-bottom: 12px;">AUTUMN CHUSEOK SALON</div>
       
-      <div class="turntable-box">
-        <div class="vinyl">
-          <div class="vinyl-label handwrite">Salon</div>
-        </div>
-      </div>
+      <div style="font-size: 32px; margin-bottom: 12px;">🏛️ ☕️</div>
 
       <h1 class="main-title">가을 햇살 아래,<br>우리 가족 음악 살롱</h1>
       <p class="main-sub">
@@ -365,28 +416,27 @@
         <div style="
           background: #fdfbf7;
           border: 1px solid #ebd3bf;
-          border-radius: 18px;
-          padding: 18px 18px 16px 18px;
+          border-radius: 16px;
+          padding: 16px 16px 14px 16px;
           margin-top: 14px;
           line-height: 1.75;
-          font-size: 14.5px;
+          font-size: 14px;
           color: #4b413b;
-          box-shadow: 0 2px 10px rgba(90, 80, 70, 0.04);
         ">
           <div style="
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 6px;
             font-weight: 700;
             color: #8c5b36;
-            margin-bottom: 10px;
-            font-size: 15.5px;
+            margin-bottom: 8px;
+            font-size: 15px;
           ">
             <span>🛋️</span>
             <span>살롱 릴랙스 & 청음 꿀팁</span>
           </div>
 
-          <p style="margin: 0 0 12px 0; color: #584c45; letter-spacing: -0.2px; line-height: 1.65;">
+          <p style="margin: 0 0 10px 0; color: #584c45; line-height: 1.65;">
             푹신한 소파에 깊숙이 기대어 긴장을 풀고, 가벼운 스낵과 시원한 음료와 함께 음악에 몸을 맡겨보세요.
           </p>
 
@@ -394,9 +444,9 @@
             background: #fbf3ea;
             border: 1px solid #f2decb;
             border-radius: 12px;
-            padding: 11px 13px;
-            margin-bottom: 12px;
-            font-size: 14.5px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
             color: #8a481c;
             line-height: 1.6;
           ">
@@ -404,21 +454,20 @@
           </div>
 
           <div style="
-            font-size: 14px;
+            font-size: 13.5px;
             color: #635850;
             line-height: 1.7;
             border-top: 1px dashed #e5dacb;
-            padding-top: 11px;
+            padding-top: 10px;
           ">
-            <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 5px;">
               <span style="
-                display: inline-block;
                 background: #edf2eb;
                 color: #3b5f34;
                 font-weight: 700;
-                padding: 2px 7px;
-                border-radius: 6px;
-                font-size: 11.5px;
+                padding: 1px 6px;
+                border-radius: 5px;
+                font-size: 11px;
                 font-family: 'Pretendard', sans-serif;
                 flex-shrink: 0;
               ">OK</span>
@@ -427,13 +476,12 @@
 
             <div style="display: flex; align-items: baseline; gap: 6px;">
               <span style="
-                display: inline-block;
                 background: #fcebe8;
                 color: #a13426;
                 font-weight: 700;
-                padding: 2px 7px;
-                border-radius: 6px;
-                font-size: 11.5px;
+                padding: 1px 6px;
+                border-radius: 5px;
+                font-size: 11px;
                 font-family: 'Pretendard', sans-serif;
                 flex-shrink: 0;
               ">NO</span>
@@ -737,19 +785,11 @@
       </div>
     </div>
 
-<!-- 본문 하단 CLOSING 교체 영역 -->
+    <!-- 본문 하단 CLOSING 영역 -->
     <div class="deco-line">☕️</div>
 
-    <!-- CLOSING -->
-    <div class="closing-wrap" style="text-align: center; padding: 20px 10px 10px 10px;">
-      <p class="cl-quote" style="
-        font-family: 'Gowun Batang', serif;
-        font-size: 15.5px;
-        color: #3b322d;
-        line-height: 2.0;
-        margin-bottom: 26px;
-        word-break: keep-all;
-      ">
+    <div class="closing-wrap">
+      <p class="cl-quote">
         "따뜻한 음악과 함께한 오늘 오후의 쉼표처럼,<br>
         지금까지 함께해 온 우리 다섯 사람과<br>
         이제 여섯 사람이 되어 맞이할 <br>
@@ -759,10 +799,50 @@
         <strong>2026년 9월 25일을 손꼽아 기다리며, <br>
           막내 올림 💌</strong>
       </p>
-
     </div>
 
-  </div> <!-- .mobile-container 끝 -->
+  </div>
+
+  <script>
+    const audio = document.getElementById('bgmAudio');
+    const btn = document.getElementById('bgmBtn');
+    const text = document.getElementById('bgmText');
+    const gate = document.getElementById('musicGate');
+    let isPlaying = false;
+
+    audio.volume = 1.0;
+
+    function enterSalon() {
+      audio.play().then(() => {
+        isPlaying = true;
+        btn.classList.add('playing');
+        text.innerText = '음악 멈춤 ⏸';
+      }).catch((err) => {
+        console.error("Audio playback error:", err);
+      });
+
+      gate.style.opacity = '0';
+      setTimeout(() => {
+        gate.style.display = 'none';
+      }, 400);
+    }
+
+    function toggleBgm(e) {
+      if (e) e.stopPropagation();
+      if (isPlaying) {
+        audio.pause();
+        btn.classList.remove('playing');
+        text.innerText = '현악 앙상블 ♫';
+        isPlaying = false;
+      } else {
+        audio.play().then(() => {
+          btn.classList.add('playing');
+          text.innerText = '음악 멈춤 ⏸';
+          isPlaying = true;
+        }).catch(err => console.error(err));
+      }
+    }
+  </script>
 
 </body>
 </html>
