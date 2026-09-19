@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>가을 오후의 가족 음악 살롱 ♫</title>
+  
+  <!-- 카카오톡/SNS 공유 썸네일 & 미리보기 (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="가을 햇살 아래, 우리 가족 음악 살롱 ☕️">
+  <meta property="og:description" content="2026.09.25 금요일 | 리스닝룸 백지화 | 깨복이와 함께하는 오후 쉼표">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=80">
+
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+    @font-face {
+      font-family: 'KyoboHandwriting2020pdy';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020pdy.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #dcd8d0;
+      font-family: 'Gowun Batang', 'Pretendard', serif;
+      color: #3b3531;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: 450px;
+      background: #fdfbf7;
+      padding: 50px 24px 76px 24px;
+      box-shadow: 0 10px 35px rgba(50, 40, 30, 0.1);
+      position: relative;
+    }
+
+    .handwrite {
+      font-family: 'KyoboHandwriting2020pdy', cursive;
+    }
+
+    /* 상단 헤더 */
+    .header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .tag-top {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #6a7062;
+      background: #eef0eb;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    /* 회전하는 바이닐 LP */
+    .turntable-box {
+      width: 136px;
+      height: 136px;
+      background: #f3efe8;
+      border-radius: 28px;
+      margin: 0 auto 24px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(90, 80, 70, 0.07);
+    }
+
+    .vinyl {
+      width: 114px;
+      height: 114px;
+      border-radius: 50%;
+      background: repeating-radial-gradient(#2b2826, #2b2826 4px, #3a3633 5px, #2b2826 6px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin 16s linear infinite;
+    }
+
+    .vinyl-label {
+      width: 44px;
+      height: 44px;
+      background: #f7ecd7;
+      border-radius: 50%;
+      border: 4px solid #2b2826;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #695643;
+      font-weight: 700;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .main-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #27221f;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .main-sub {
+      font-size: 16px;
+      color: #685e57;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    /* 가족 태그 */
+    .family-tags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .f-pill {
+      font-size: 13.5px;
+      background: #f2eee7;
+      color: #4f453f;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-family: 'Pretendard', sans-serif;
+      font-weight: 600;
+    }
+
+    .f-pill.baby {
+      background: #fcf0e4;
+      color: #9d501b;
+      font-weight: 700;
+      border: 1px solid #ebd3bf;
+    }
+
+    /* 감성 티켓 인포박스 */
+    .ticket-card {
+      background: #f9f6f0;
+      border-radius: 20px;
+      padding: 22px 20px;
+      text-align: left;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #4b413b;
+      position: relative;
+      border: 1px solid #ede5d8;
+    }
+
+    .ticket-row {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .ticket-label {
+      width: 78px;
+      color: #7b7168;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .ticket-val {
+      font-weight: 700;
+      color: #2e2824;
+    }
+
+    .deco-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 36px 0;
+      color: #8c8276;
+      font-size: 13px;
+      font-family: 'Pretendard', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .deco-line::before, .deco-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e4dcce;
+    }
+
+    /* 챕터 & 트랙 리스트 */
+    .chapter {
+      margin-bottom: 32px;
+    }
+
+    .chapter-title {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #53624e;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: -0.2px;
+    }
+
+    .song-box {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin-bottom: 11px;
+      box-shadow: 0 2px 10px rgba(70, 60, 50, 0.03);
+      border: 1px solid #f0ebe2;
+    }
+
+    .song-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+
+    .song-num {
+      font-size: 12.5px;
+      color: #a79c93;
+      min-width: 18px;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    .role-tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    .tag-막내 { background: #e9ecf2; color: #3b4b6d; }
+    .tag-아빠 { background: #faede9; color: #9c432d; }
+    .tag-엄마 { background: #fbebf1; color: #943d63; }
+    .tag-공주 { background: #e8f2ef; color: #2e6659; }
+    .tag-형부 { background: #eaf1f7; color: #2e597c; }
+
+    .song-name {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #292421;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .song-desc {
+      font-size: 14px;
+      color: #635850;
+      line-height: 1.65;
+      padding-left: 28px;
+    }
+
+    /* 클로징 */
+    .closing-wrap {
+      text-align: center;
+      padding: 24px 10px 0 10px;
+    }
+
+    .cl-quote {
+      font-size: 15.5px;
+      color: #3b322d;
+      line-height: 1.95;
+      margin-bottom: 22px;
+    }
+
+    .cl-from {
+      font-size: 16px;
+      color: #5c6254;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+    
+    <!-- HEADER -->
+    <div class="header">
+      <div class="tag-top">CHUSEOK MUSIC SALON</div>
+      
+      <div class="turntable-box">
+        <div class="vinyl">
+          <div class="vinyl-label handwrite">Salon</div>
+        </div>
+      </div>
+
+      <h1 class="main-title">가을 햇살 아래,<br>우리 가족 음악 살롱</h1>
+      <p class="main-sub">
+        추석 명절, 다 함께 모여 나누는 포근한 쉼표 ☕️<br>
+        소중한 다섯 사람과 곧 찾아올 <strong>깨복이</strong>를 기다리며
+      </p>
+
+      <div class="family-tags">
+        <span class="f-pill">아빠</span>
+        <span class="f-pill">엄마</span>
+        <span class="f-pill">공주</span>
+        <span class="f-pill">형부</span>
+        <span class="f-pill">막내</span>
+        <span class="f-pill baby">✨ 귀요미 깨복이 ✨</span>
+      </div>
+
+      <div class="ticket-card">
+        <div class="ticket-row">
+          <span class="ticket-label">날짜</span>
+          <span class="ticket-val">2026년 9월 25일 (금)</span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label">시간</span>
+          <span class="ticket-val">오후 3:00 ~ 5:00</span>
+        </div>
+        <div class="ticket-row">
+          <span class="ticket-label">장소</span>
+          <span class="ticket-val">리스닝룸 백지화</span>
+        </div>
+
+        <!-- 릴랙스 & 청음 안내 컴포넌트 -->
+        <div style="
+          background: #fdfbf7;
+          border: 1px solid #ebd3bf;
+          border-radius: 18px;
+          padding: 18px 18px 16px 18px;
+          margin-top: 14px;
+          line-height: 1.75;
+          font-size: 14.5px;
+          color: #4b413b;
+          box-shadow: 0 2px 10px rgba(90, 80, 70, 0.04);
+        ">
+          <div style="
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: 700;
+            color: #8c5b36;
+            margin-bottom: 10px;
+            font-size: 15.5px;
+          ">
+            <span>🛋️</span>
+            <span>살롱 릴랙스 & 청음 꿀팁</span>
+          </div>
+
+          <p style="margin: 0 0 12px 0; color: #584c45; letter-spacing: -0.2px; line-height: 1.65;">
+            푹신한 소파에 깊숙이 기대어 긴장을 풀고, 가벼운 스낵과 시원한 음료와 함께 음악에 몸을 맡겨보세요.
+          </p>
+
+          <div style="
+            background: #fbf3ea;
+            border: 1px solid #f2decb;
+            border-radius: 12px;
+            padding: 11px 13px;
+            margin-bottom: 12px;
+            font-size: 14.5px;
+            color: #8a481c;
+            line-height: 1.6;
+          ">
+            👑 <strong>내 선곡 차례</strong>가 되면 주저 말고 <strong>맨 앞자리 VVIP석</strong>으로 이동해 보세요! 리스닝룸 사운드를 온몸으로 만끽할 수 있는 최고의 명당입니다.
+          </div>
+
+          <div style="
+            font-size: 14px;
+            color: #635850;
+            line-height: 1.7;
+            border-top: 1px dashed #e5dacb;
+            padding-top: 11px;
+          ">
+            <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px;">
+              <span style="
+                display: inline-block;
+                background: #edf2eb;
+                color: #3b5f34;
+                font-weight: 700;
+                padding: 2px 7px;
+                border-radius: 6px;
+                font-size: 11.5px;
+                font-family: 'Pretendard', sans-serif;
+                flex-shrink: 0;
+              ">OK</span>
+              <span>우리만의 아늑한 시간이니 <strong>콧노래 흥얼거림, 어깨 들썩들썩, 리듬 타기</strong>는 대환영! 눈치 주기 없기예요 ♫</span>
+            </div>
+
+            <div style="display: flex; align-items: baseline; gap: 6px;">
+              <span style="
+                display: inline-block;
+                background: #fcebe8;
+                color: #a13426;
+                font-weight: 700;
+                padding: 2px 7px;
+                border-radius: 6px;
+                font-size: 11.5px;
+                font-family: 'Pretendard', sans-serif;
+                flex-shrink: 0;
+              ">CHECK</span>
+              <span>단, 다른 가족들의 깊은 감상을 위해 <strong>큰 소리 대화는 잠시만 아껴주기, 약속!</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="deco-line">PLAYLIST & NOTES</div>
+
+    <!-- CHAPTER 1 -->
+    <div class="chapter">
+      <div class="chapter-title">Chapter 1. 나른한 오후, 편안한 첫인사</div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">01</span>
+          <span class="role-tag tag-막내">막내</span>
+          <span class="song-name">City of Stars - La La Land OST</span>
+        </div>
+        <div class="song-desc">부드러운 피아노와 휘파람 소리. 소파에 편히 기대어 숨을 고르는 웰컴 오프닝입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">02</span>
+          <span class="role-tag tag-아빠">아빠</span>
+          <span class="song-name">정태춘 - 솔미의 시절</span>
+        </div>
+        <div class="song-desc">아빠의 청춘을 담은 다정하고 묵직한 통기타 선율. 순수했던 그 시절 추억이 따스하게 번집니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">03</span>
+          <span class="role-tag tag-엄마">엄마</span>
+          <span class="song-name">F.R. David - Words</span>
+        </div>
+        <div class="song-desc">맑은 멜로디에 실린 엄마의 고운 소녀 감성! 차 한 모금 머금으며 미소 짓기 좋은 트랙입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">04</span>
+          <span class="role-tag tag-공주">공주</span>
+          <span class="song-name">도경수 - Guitarist</span>
+        </div>
+        <div class="song-desc">포근한 담요처럼 감싸주는 다정한 보컬. 뱃속 깨복이 귀에도 쏙쏙 들어갈 꿀 보이스예요.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">05</span>
+          <span class="role-tag tag-형부">형부</span>
+          <span class="song-name">태연 - 만찬가</span>
+        </div>
+        <div class="song-desc">담담하게 시작해 점차 벅차오르는 보컬. 온 가족을 따뜻하게 안아주는 위로의 노래입니다.</div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 2 -->
+    <div class="chapter">
+      <div class="chapter-title">Chapter 2. 어깨춤이 들썩! 비타민 타임</div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">06</span>
+          <span class="role-tag tag-공주">공주</span>
+          <span class="song-name">정은지 - 파도 (i love LOVE)</span>
+        </div>
+        <div class="song-desc">가슴이 뻥 뚫리는 시원한 보컬! 오후의 나른함을 상쾌하게 날려주는 시원한 파도 바람입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">07</span>
+          <span class="role-tag tag-형부">형부</span>
+          <span class="song-name">로이킴 - Smile Boy</span>
+        </div>
+        <div class="song-desc">어깨를 들썩이게 만드는 형부표 비타민 송! 다 같이 환하게 웃어보는 시간이에요.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">08</span>
+          <span class="role-tag tag-엄마">엄마</span>
+          <span class="song-name">변진섭 - 희망사항</span>
+        </div>
+        <div class="song-desc">통통 튀는 피아노 반주와 함께 떠오르는 엄마 아빠의 유쾌하고 풋풋했던 연애 시절 소환!</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">09</span>
+          <span class="role-tag tag-아빠">아빠</span>
+          <span class="song-name">이브 몽땅 - 고엽 (Les Feuilles Mortes)</span>
+        </div>
+        <div class="song-desc">낙엽 밟는 소리 같은 멋쟁이 아빠의 바리톤 샹송. 오후 공기를 한층 더 그윽하게 만들어줍니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">10</span>
+          <span class="role-tag tag-막내">막내</span>
+          <span class="song-name">AJR - World’s Smallest Violin</span>
+        </div>
+        <div class="song-desc">점점 빨라지는 유쾌한 브라스 리듬에 맞춰 가볍게 박수를 치며 오후의 활기를 더해봅니다.</div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 3 -->
+    <div class="chapter">
+      <div class="chapter-title">Chapter 3. 리스닝룸을 가득 채우는 풍성한 울림</div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">11</span>
+          <span class="role-tag tag-형부">형부</span>
+          <span class="song-name">한로로 - 0+0</span>
+        </div>
+        <div class="song-desc">스피커를 묵직하게 울리는 모던 록 사운드. 좋은 오디오의 깊은 베이스를 온몸으로 느껴보세요.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">12</span>
+          <span class="role-tag tag-공주">공주</span>
+          <span class="song-name">송소희 - Not a Dream</span>
+        </div>
+        <div class="song-desc">신비로운 국악 선율 위로 시원하게 뻗어 나가는 보컬의 전율. 리스닝룸 공간을 압도하는 순간입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">13</span>
+          <span class="role-tag tag-아빠">아빠</span>
+          <span class="song-name">L. 파바로티 - Nessun dorma</span>
+        </div>
+        <div class="song-desc">폭발적인 "빈체로!" 고음에 터져 나오는 감탄. 멋진 곡을 픽해준 아빠를 위한 박수 타임!</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">14</span>
+          <span class="role-tag tag-엄마">엄마</span>
+          <span class="song-name">양수경 - 사랑은 창밖에 빗물 같아요</span>
+        </div>
+        <div class="song-desc">풍성한 현악 선율과 애절한 목소리. 나른한 오후 창가에 앉아 듣듯 마음을 촉촉하게 적셔줍니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">15</span>
+          <span class="role-tag tag-막내">막내</span>
+          <span class="song-name">Miguel - Remember Me (Coco OST)</span>
+        </div>
+        <div class="song-desc">영화 코코의 따뜻한 멕시코 멜로디. 훗날 깨복이랑 손잡고 영화 보며 같이 듣고 싶은 노래예요.</div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 4 -->
+    <div class="chapter">
+      <div class="chapter-title">Chapter 4. 깊은 감동과 포근한 쉼표</div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">16</span>
+          <span class="role-tag tag-엄마">엄마</span>
+          <span class="song-name">The Newton Family - Smile Again</span>
+        </div>
+        <div class="song-desc">한 해 동안 고생 많았던 우리 가족 모두를 다정하게 토닥여주는 엄마의 따스한 응원입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">17</span>
+          <span class="role-tag tag-형부">형부</span>
+          <span class="song-name">XIA (김준수) - 사랑은 눈꽃처럼</span>
+        </div>
+        <div class="song-desc">포근하고 절절한 감성 발라드. 방 안을 따스한 온기로 물들이며 편안한 몰입을 이끕니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">18</span>
+          <span class="role-tag tag-아빠">아빠</span>
+          <span class="song-name">L. 파바로티 & Lucio - Caruso (Live)</span>
+        </div>
+        <div class="song-desc">두 거장의 숨소리와 압도적인 성량이 빚어내는 현장감. 클래식 오페라 홀에 온 듯한 감동입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">19</span>
+          <span class="role-tag tag-공주">공주</span>
+          <span class="song-name">안예은 - 교복에서 부케까지</span>
+        </div>
+        <div class="song-desc">장난치던 우리 언니가 결혼하고 이제 엄마가 되다니! 뭉클하고 기분 좋은 인생 한 페이지입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">20</span>
+          <span class="role-tag tag-막내">막내</span>
+          <span class="song-name">이시카와 아야코 - Amazing Grace</span>
+        </div>
+        <div class="song-desc">맑고 정갈한 바이올린 독주. 눈을 감고 마음의 긴장을 부드럽게 풀어주는 평온한 쉼표예요.</div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 5 -->
+    <div class="chapter">
+      <div class="chapter-title">Chapter 5. 아늑한 숲속 쉼표와 온기</div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">21</span>
+          <span class="role-tag tag-막내">막내</span>
+          <span class="song-name">테시마 아오이 - 森の小さなレストラン</span>
+        </div>
+        <div class="song-desc">숲속 요정이 조곤조곤 속삭이듯 맑은 음색. 깨복이와 온 가족을 나른하게 재워주는 자장가 같아요.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">22</span>
+          <span class="role-tag tag-엄마">엄마</span>
+          <span class="song-name">Carpenters - Top of The World</span>
+        </div>
+        <div class="song-desc">카렌 카펜터의 꿀 떨어지는 저음 보컬! 듣기만 해도 기분 좋은 에너지가 솟아나는 명곡입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">23</span>
+          <span class="role-tag tag-아빠">아빠</span>
+          <span class="song-name">정태춘 - 다시, 첫차를 기다리며</span>
+        </div>
+        <div class="song-desc">가족을 위해 묵묵히 걸어온 든든한 아빠의 깊은 독백. 덤덤해서 더 가슴 깊이 남는 감동입니다.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">24</span>
+          <span class="role-tag tag-형부">형부</span>
+          <span class="song-name">SG워너비 - 겨울나무</span>
+        </div>
+        <div class="song-desc">든든한 가족이라는 큰 나무 그늘 아래 편안하게 기대어 쉬어가는 따뜻한 보컬 하모니.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">25</span>
+          <span class="role-tag tag-공주">공주</span>
+          <span class="song-name">이무진 - 청춘만화</span>
+        </div>
+        <div class="song-desc">한 장씩 넘길 때마다 반짝이는 우리 가족의 만화책! 명랑하고 풋풋한 멜로디에 웃음이 번집니다.</div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 6 -->
+    <div class="chapter">
+      <div class="chapter-title">Chapter 6. 다정한 오후를 마무리하며</div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">26</span>
+          <span class="role-tag tag-형부">형부</span>
+          <span class="song-name">대성 - Universe</span>
+        </div>
+        <div class="song-desc">넓은 우주 속에서 우리가 가족이 되고, 깨복이까지 찾아와 더 북적북적해질 우리 집을 기대하며!</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">27</span>
+          <span class="role-tag tag-공주">공주</span>
+          <span class="song-name">아이유 - Dear my crazy soulmate</span>
+        </div>
+        <div class="song-desc">티격태격해도 세상에서 제일 든든하고 편한 평생 짝꿍, 우리 가족들에게 건네는 고백!</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">28</span>
+          <span class="role-tag tag-엄마">엄마</span>
+          <span class="song-name">Susan Jacks - Evergreen</span>
+        </div>
+        <div class="song-desc">늘 푸른 나무처럼 언제나 한결같은 엄마의 깊고 변함없는 사랑을 닮은 맑은 울림.</div>
+      </div>
+
+      <div class="song-box">
+        <div class="song-header">
+          <span class="song-num">29</span>
+          <span class="role-tag tag-아빠">아빠</span>
+          <span class="song-name">송창식 - 밤눈</span>
+        </div>
+        <div class="song-desc">고요하게 내려앉는 눈처럼 깊은 여운을 남기며, 오늘의 다정한 음악 살롱을 닫아주는 피날레.</div>
+      </div>
+    </div>
+
+    <div class="deco-line">TEA & REST</div>
+
+    <!-- CLOSING -->
+    <div class="closing-wrap">
+      <p class="cl-quote">
+        "맛있는 간식 먹으며 좋은 음악 실컷 듣는 오늘처럼,<br>
+        우리 다섯 사람, 그리고 곧 함께할 깨복이까지<br>
+        매일매일 재미있고 다정하게 지내봅시다!"
+      </p>
+      <div class="cl-from handwrite">2026년 9월 25일을 손꼽아 기다리며, 막내 올림 💌</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
