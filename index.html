@@ -20,6 +20,22 @@
       font-weight: normal;
       font-style: normal;
     }
+    @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic Low.woff');
+  @import url('https://fonts.googleapis.com/css2?family=MaruBuri:wght@400;600;700&display=swap');
+  @font-face {
+    font-family: 'Ownglyph_DailyPlan-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_DailyPlan-Rg.woff2') format('woff2');
+  }
+
+  /* 부드럽고 우아한 감성 서명 폰트 */
+  .sign-font {
+    font-family: 'Ownglyph_DailyPlan-Rg', 'MaruBuri', cursive, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #636b5a;
+    letter-spacing: -0.3px;
+    word-break: keep-all;
+  }
 
     * {
       box-sizing: border-box;
@@ -717,19 +733,40 @@
       </div>
     </div>
 
-    <div class="deco-line">TEA & REST</div>
+<!-- 본문 하단 CLOSING 교체 영역 -->
+    <div class="deco-line">☕️</div>
 
     <!-- CLOSING -->
-    <div class="closing-wrap">
-      <p class="cl-quote">
-        "맛있는 간식 먹으며 좋은 음악 실컷 듣는 오늘처럼,<br>
-        우리 다섯 사람, 그리고 곧 함께할 깨복이까지<br>
-        매일매일 재미있고 다정하게 지내봅시다!"
+    <div class="closing-wrap" style="text-align: center; padding: 20px 10px 10px 10px;">
+      <p class="cl-quote" style="
+        font-family: 'Gowun Batang', serif;
+        font-size: 15.5px;
+        color: #3b322d;
+        line-height: 2.0;
+        margin-bottom: 26px;
+        word-break: keep-all;
+      ">
+        "따뜻한 음악과 함께한 오늘 오후의 쉼표처럼,<br>
+        지금까지 함께해 온 우리 다섯 사람과<br>
+        이제 여섯 사람이 되어 맞이할 깨복이와의 시간도<br>
+        언제나 평온하고 다정하게 빛나길 바랍니다."
       </p>
-      <div class="cl-from handwrite">2026년 9월 25일을 손꼽아 기다리며, 막내 올림 💌</div>
+
+      <!-- 감성 서명 영역 -->
+      <div style="
+        display: inline-block;
+        background: rgba(106, 112, 98, 0.08);
+        border: 1px dashed rgba(106, 112, 98, 0.3);
+        padding: 10px 20px;
+        border-radius: 30px;
+      ">
+        <div class="sign-font">
+          2026년 9월 25일을 손꼽아 기다리며, 막내 올림 💌
+        </div>
+      </div>
     </div>
 
-  </div>
+  </div> <!-- .mobile-container 끝 -->
 
 </body>
 </html>
